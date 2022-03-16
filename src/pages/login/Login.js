@@ -1,31 +1,21 @@
-import './Signup.css';
+import './Login.css';
 import { useState } from 'react';
 
-const Signup = () => {
-    const [userName, setUserName] = useState('');
+const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const onSubmitHandler = (e) => {
         e.preventDefault();
-        console.log(userName, email, password);
-    }
+        console.log(email, password);
+    };
 
     return (
-        <div className="signup" onSubmit = {onSubmitHandler}>
-            <div className="signup-left"></div>
-            <div className="signup-right">
-                <form className="signup-form">
-                    <h2>Sign up</h2>
-                    <label>
-                        <span>Full Name</span>
-                        <input
-                            type="text"
-                            onChange={(e) => setUserName(e.target.value)}
-                            value={userName}
-                            required
-                        />
-                    </label>
+        <div className="login" onSubmit={onSubmitHandler}>
+            <div className="login-left"></div>
+            <div className="login-right">
+                <form className="login-form">
+                    <h2>Login</h2>
                     <label>
                         <span>Email address</span>
                         <input
@@ -44,12 +34,14 @@ const Signup = () => {
                             required
                         />
                     </label>
-                    <button>Signup</button>
-                    <p>Already have account? <a href='/login'>Login</a></p>
+                    <button>Login</button>
+                    <p>
+                        Don't have an account? <a href="/signup">Signup</a>
+                    </p>
                 </form>
             </div>
         </div>
     );
 };
 
-export default Signup;
+export default Login;
